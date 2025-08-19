@@ -1,6 +1,6 @@
 [project]
 name = "iflow-mcp_mcp-email-server"
-version = "0.0.1"
+version = "0.0.2"
 description = "IMAP and SMTP via MCP Server"
 authors = [{ name = "ai-zerolab", email = "jizhongsheng957@gmail.com" }]
 readme = "README.md"
@@ -18,7 +18,7 @@ classifiers = [
 ]
 dependencies = [
     "aioimaplib>=2.0.1",
-    "aiosmtplib>=4.0.0",
+    "aiosmtplib==4.0.0",
     "gradio>=5.18.0",
     "jinja2>=3.1.5",
     "loguru>=0.7.3",
@@ -123,3 +123,6 @@ skip_empty = true
 [tool.coverage.run]
 branch = true
 source = ["mcp_email_server"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["mcp_email_server"]

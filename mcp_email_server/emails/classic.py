@@ -1,6 +1,7 @@
 import email.utils
 from collections.abc import AsyncGenerator
 from datetime import datetime
+from email.message import EmailMessage
 from email.mime.text import MIMEText
 from email.parser import BytesParser
 from email.policy import default
@@ -274,10 +275,11 @@ class EmailClient:
     async def send_email(
         self, recipients: list[str], subject: str, body: str, cc: list[str] | None = None, bcc: list[str] | None = None
     ):
-        msg = MIMEText(body)
+        msg = EmailMessage()
         msg["Subject"] = subject
         msg["From"] = self.sender
         msg["To"] = ", ".join(recipients)
+        msg.set_content(body)
 
         # Add CC header if provided (visible to recipients)
         if cc:
