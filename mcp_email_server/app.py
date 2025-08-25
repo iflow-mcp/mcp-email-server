@@ -23,7 +23,7 @@ async def get_account(account_name: str) -> EmailSettings | ProviderSettings | N
 
 
 @mcp.tool()
-async def list_available_accounts() -> list[AccountAttributes]:
+async def list_available_accounts() -> list:
     settings = get_settings()
     return [account.masked() for account in settings.get_accounts()]
 

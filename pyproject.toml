@@ -1,6 +1,6 @@
 [project]
 name = "iflow-mcp_mcp-email-server"
-version = "0.0.2"
+version = "0.0.3"
 description = "IMAP and SMTP via MCP Server"
 authors = [{ name = "ai-zerolab", email = "jizhongsheng957@gmail.com" }]
 readme = "README.md"
