@@ -279,7 +279,14 @@ class EmailClient:
         msg["Subject"] = subject
         msg["From"] = self.sender
         msg["To"] = ", ".join(recipients)
-        msg.set_content(body)
+
+        # Check if body is HTML content
+        if body.strip().startswith("<!DOCTYPE html") or body.strip().startswith("<html") or "<body>" in body:
+            # For HTML content, set content type explicitly
+            msg.set_content(body, subtype="html")
+        else:
+            # For plain text content
+            msg.set_content(body)
 
         # Add CC header if provided (visible to recipients)
         if cc:
