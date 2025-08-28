@@ -1,5 +1,4 @@
 version = 1
-revision = 1
 requires-python = ">=3.10, <4.0"
 resolution-markers = [
     "python_full_version >= '3.13'",
@@ -543,7 +542,7 @@ wheels = [
 
 [[package]]
 name = "iflow-mcp-mcp-email-server"
-version = "0.0.3"
+version = "0.0.4"
 source = { editable = "." }
 dependencies = [
     { name = "aioimaplib" },
